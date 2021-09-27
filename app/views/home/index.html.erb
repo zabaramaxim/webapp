@@ -1,0 +1,161 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang = "en">-->
+<!--<head>-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--  <style>-->
+
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <div class="container">-->
+<!--    <div class = "kpx_login">-->
+<!--      <h3 class="kpx_authTitle"> Sign up </h3>-->
+<!--      <div class="row kpx_row-sm-offset-3 kpx_socialButtons">-->
+<!--        <div class="col-xs-2 col-sm-2">-->
+<!--          <a href="#" class="btn btn-lg btn-lock kpx_btn-facebook" data-toggle="tooltip" data-placement="top" title="facebook">-->
+<!--            <i class="fa fa-facebook fa-2x">-->
+<!--              ::before-->
+<!--            </i>-->
+<!--            <span class="hiden-xs"></span>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+          box-sizing: border-box;
+      }
+
+      /* style the container */
+      .container {
+          position: relative;
+          border-radius: 5px;
+          /*background-color: #55ACEE;*/
+          padding: 20px 0 30px 0;
+      }
+
+      /* style inputs and link buttons */
+      input,
+      .btn {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 4px;
+          margin: 5px 0;
+          opacity: 0.85;
+          display: inline-block;
+          font-size: 17px;
+          line-height: 20px;
+          text-decoration: none; /* remove underline from anchors */
+      }
+
+      input:hover,
+      .btn:hover {
+          opacity: 1;
+      }
+
+      /* add appropriate colors to fb, twitter and google buttons */
+      .fb {
+          background-color: #3B5998;
+          color: white;
+      }
+
+      .instagram {
+          background: linear-gradient(to right, #f14f4a 0%,  #f7a54d 50%, #8855b6 100%);
+          color: white;
+      }
+
+      .github {
+          background-color: #161b22;
+          color: white;
+      }
+
+      /* style the submit button */
+      input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+          background-color: #45a049;
+      }
+
+      /* Two-column layout */
+      .col {
+          float: left;
+          width: 50%;
+          margin: auto;
+          padding: 0 50px;
+          margin-top: 6px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+
+
+      /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 650px) {
+          .col {
+              width: 100%;
+              margin-top: 0;
+          }
+          /* hide the vertical line */
+          .vl {
+              display: none;
+          }
+          /* show the hidden text on small screens */
+          .hide-md-lg {
+              display: block;
+              text-align: center;
+          }
+      }
+  </style>
+</head>
+<body>
+
+<div class="container" style=" ">
+    <div class="row">
+      <h2 style="text-align:center">Login with Social Media or Manually</h2>
+
+      <div class="col">
+        <% if current_user %>
+          <li> <%= link_to 'Log Out', logout_path, method: :delete %></li>
+        <% else %>
+          <a href="auth/facebook" class="fb btn" >
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+          </a>
+          <a href="#" class="instagram btn">
+            <i class="fa fa-instagram fa-fw"></i> Login with Instagram
+          </a>
+          <a href="auth/github" class="github btn">
+            <i class="fa fa-github fa-fw"></i> Login with GitHub
+          </a>
+        <% end %>
+      </div>
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
